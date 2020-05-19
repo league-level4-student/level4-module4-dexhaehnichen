@@ -39,7 +39,7 @@ public class CirclePolymorph extends Polymorph{
 		g.fillRect(getX(), getY(), width, height);
 	}
 	
-	public void update() {
+	public void update(int x, int y) {
 		setY((int) (Math.sin(dY)*100)+250);
 		setX((int) (Math.cos(dX)*100)+250);
 		dY += 0.1;

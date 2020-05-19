@@ -2,14 +2,18 @@ package _03_polymorphs;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
 
-public class MousePolymorph extends Polymorph{
+import javax.imageio.ImageIO;
+import javax.swing.JLabel;
+
+public class ImagePolymorph extends Polymorph{
 
 	private int height = 50;
 	private int width = 50;
-	private boolean up = false;
-	
-	MousePolymorph(int x, int y, int width, int height) {
+
+	ImagePolymorph(int x, int y, int width, int height) {
 		super(x, y);
 		this.height = height;
 		this.width = width;
@@ -33,12 +37,8 @@ public class MousePolymorph extends Polymorph{
 	
 	@Override
 	public void draw(Graphics g) {
-		g.setColor(Color.black);
-		g.fillRect(getX(), getY(), width, height);
+		g.drawImage(PolymorphWindow.orange, getX(), getY(), width, height, null);
+		//g.fillRect(getX(), getY(), width, height);
 	}
 	
-	public void update(int x, int y) {
-		setY(y);
-		setX(x);
-	}
 }

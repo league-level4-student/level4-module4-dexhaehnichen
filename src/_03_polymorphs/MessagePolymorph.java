@@ -3,13 +3,15 @@ package _03_polymorphs;
 import java.awt.Color;
 import java.awt.Graphics;
 
-public class MousePolymorph extends Polymorph{
+import javax.swing.JOptionPane;
+
+public class MessagePolymorph extends Polymorph{
 
 	private int height = 50;
 	private int width = 50;
-	private boolean up = false;
 	
-	MousePolymorph(int x, int y, int width, int height) {
+	
+	MessagePolymorph(int x, int y, int width, int height) {
 		super(x, y);
 		this.height = height;
 		this.width = width;
@@ -33,12 +35,14 @@ public class MousePolymorph extends Polymorph{
 	
 	@Override
 	public void draw(Graphics g) {
-		g.setColor(Color.black);
+		g.setColor(Color.blue);
 		g.fillRect(getX(), getY(), width, height);
 	}
 	
-	public void update(int x, int y) {
-		setY(y);
-		setX(x);
+	public void update(int x, int y, boolean p) {
+		if(x < width+getX() && x > 0+getX() && y < height+getY() && y > 0+getY() && p == true) {
+			JOptionPane.showMessageDialog(null, "test");
+		}
 	}
+	
 }

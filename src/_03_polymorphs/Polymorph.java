@@ -27,7 +27,7 @@ public abstract class Polymorph {
     	y = i;
     }
     
-    public void update(){
+    public void update(int i, int j, boolean b){
    	 
     }
     
