@@ -40,7 +40,7 @@ public class MessagePolymorph extends Polymorph{
 	}
 	
 	public void update(int x, int y, boolean p) {
-		if(x < width+getX() && x > 0+getX() && y < height+getY() && y > 0+getY() && p == true) {
+		if(x < width+getX()+8 && x > 0+getX()+5 && y < height+getY()+30 && y > 0+getY()+30 && p == true) {
 			JOptionPane.showMessageDialog(null, "test");
 		}
 	}

@@ -81,6 +81,7 @@ public class PolymorphWindow extends JPanel implements ActionListener, MouseMoti
    	 for (int i = 0; i < polymorphs.length; i++) {
    			polymorphs[i].update(mouseX,mouseY,mouseP);
    	 }
+   	 mouseP = false;
     }
 
 	@Override
@@ -93,25 +94,28 @@ public class PolymorphWindow extends JPanel implements ActionListener, MouseMoti
 	public void mouseMoved(MouseEvent e) {
 		// TODO Auto-generated method stub
 		mouseX = e.getX();
+		//x < width+getX() && x > 0+getX() && y < height+getY() && y > 0+getY() && p == true
+		System.out.println("X: " + mouseX + "(bounds: 300, 250)");
 		mouseY = e.getY();
+		System.out.println("Y: " + mouseY + "(bounds: 70, 130)");
 	}
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+		mouseP = true;
 	}
 
 	@Override
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
-		mouseP = true;
+		
 	}
 
 	@Override
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
-		mouseP = false;
+		
 	}
 
 	@Override
