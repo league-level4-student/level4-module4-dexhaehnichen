@@ -6,8 +6,12 @@ public class Doctor {
 	private boolean makesHouseCalls = false;
 	private ArrayList<Patient> patients = new ArrayList<Patient>();
 	
-	public void assignPatient(Patient p) {
-		patients.add(p);
+	public void assignPatient(Patient p) throws DoctorFullException{
+		if(getPatients().size() < 3) {
+			patients.add(p);
+		}else {
+			throw new DoctorFullException();
+		}
 	}
 	
 	public ArrayList<Patient> getPatients() {
@@ -23,6 +27,8 @@ public class Doctor {
 	}
 	
 	public void doMedicine() {
-		
+		for (int i = 0; i < getPatients().size(); i++) {
+			patients.get(i).checkPulse();
+		}
 	}
 }

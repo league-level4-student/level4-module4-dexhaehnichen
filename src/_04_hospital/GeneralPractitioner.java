@@ -6,9 +6,4 @@ public class GeneralPractitioner extends Doctor{
 		return true;
 	}
 	
-	public void doMedicine() {
-		for (int i = 0; i < getPatients().size(); i++) {
-			
-		}
-	}
 }

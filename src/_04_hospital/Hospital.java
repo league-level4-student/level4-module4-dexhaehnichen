@@ -21,4 +21,19 @@ public class Hospital {
 	public ArrayList<Patient> getPatients(){
 		return patients; 
 	}
+	
+	public void assignPatientsToDoctors() {
+		int lastDoctorIndex = 0;
+		for (int i = 0; i < patients.size(); i++) {
+			try {
+				doctors.get(lastDoctorIndex).assignPatient(patients.get(i));
+			} catch (DoctorFullException e) {
+				lastDoctorIndex++;
+				i--;
+			}
+//			System.out.println("LDI: " + lastDoctorIndex);
+//			System.out.println("i: " + i);
+		}
+	}
+	
 }
